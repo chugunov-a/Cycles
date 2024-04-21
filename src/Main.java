@@ -46,7 +46,7 @@ public class Main {
         {
            int deposit = 29000;
            int total = 0;
-           for (int i = 1; i >=1 && i <= 12; i++) {
+           for (int i = 1; i > 0 && i < 13; i++) {
                total = total + deposit;
                System.out.println(" Месяц " + i + ", сумма накоплений равна " + total);
            }
@@ -55,9 +55,9 @@ public class Main {
         {
             int deposit = 29000;
             int total = 0;
-            for (int i = 1; i >=1 && i <= 12; i++) {
-                total = total + total / 100;
+            for (int i = 1; i > 0 && i < 13; i++) {
                 total = total + deposit;
+                total = total + total / 100;
                 System.out.println(" Месяц " + i + ", сумма накоплений равна " + total);
             }
         }
