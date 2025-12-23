@@ -6,69 +6,73 @@ import org.w3c.dom.ls.LSOutput;
 
 void main() {
     System.out.println("Задание №1");
-    int FirstFriday = 5;
-    for (int i = FirstFriday; i >= 1 && i <= 31; i += 7) {
+    int firstFriday = 5;
+    for (int i = firstFriday; i >= 1 && i <= 31; i += 7) {
         System.out.println(" Сегодня пятница," + i + "-е число. Необходимо подготовить отчет.");
     }
     System.out.println("Задание №2");
-    int PassedDistance = 0;
-    int TotalDistance = 42_195;
+    int passedDistance = 0;
+    int totalDistance = 42_195;
     do {
-        int i = TotalDistance;
-        PassedDistance += 500;
-        TotalDistance -= PassedDistance;
-        System.out.println(" Держитесь! До конца дистанции осталось " + TotalDistance + " метров.");
-        TotalDistance = i;
+        int i = totalDistance;
+        passedDistance += 500;
+        totalDistance -= passedDistance;
+        System.out.println(" Держитесь! До конца дистанции осталось " + totalDistance + " метров.");
+        totalDistance = i;
     }
-    while (PassedDistance <= (TotalDistance - 500));
+    while ((totalDistance - 500) > passedDistance);
     System.out.println("Для цилка for:");
-    int PassedDistance1 = 0;
-    int TotalDistance1 = 42_195;
-    for (int i = PassedDistance1; i <= TotalDistance1; i += 500) {
-        System.out.println(" Держитесь! До конца дистанции осталось " + (TotalDistance1 - i) + " метров.");
-        // Не понимаю, почему не меняется значение переменной TotalDistance1 после объявления цикла for
-        // Пишу: TotalDistance1 -= PassedDistance1;
-        // sout "..." + TotalDistance1 + " метров.")
-        // При такой записи значение TotalDistance1 почему то не изменяется на -= PassedDistance1. Объясните, пожалуйста!)
+    int passedDistance1 = 0;
+    int totalDistance1 = 42_195;
+    for (int i = totalDistance1; i > passedDistance1; passedDistance1 += 500) {
+        totalDistance1 -= passedDistance1;
+        System.out.println(" Держитесь! До конца дистанции осталось " + totalDistance1 + " метров.");
+        totalDistance1 = i;
     }
     System.out.println("Здание №3");
-    int Budget = 1000;
-    int CurrentNumberOfDays = 0;
-    int TotalNumberOfDays = 0;
-    System.out.println(" На сумму " + Budget + " руб. вам доступно:");
-    while (Budget >= 100) {
-        CurrentNumberOfDays += 1;
-        TotalNumberOfDays = CurrentNumberOfDays * 1;
-        if (CurrentNumberOfDays % 5 == 0) {
+    int budget = 1000;
+    int currentNumberOfDays = 0;
+    int totalNumberOfDays = 0;
+    System.out.println(" На сумму " + budget + " руб. вам доступно:");
+    while (budget >= 100) {
+        currentNumberOfDays += 1;
+        totalNumberOfDays = currentNumberOfDays;
+        if (currentNumberOfDays % 5 == 0) {
             continue;
         }
-        Budget -= 100;
+        budget -= 100;
     }
-    System.out.println(" " + TotalNumberOfDays + " дней парковки.");
+    System.out.println(" " + totalNumberOfDays + " дней парковки.");
     System.out.println("Для цилка for:");
-    int Budget1 = 1000;
-    int CurrentNumberOfDays1 = 0;
-    int TotalNumberOfDays1 = 0;
-    System.out.println(" На сумму " + Budget1 + " руб. вам доступно:");
-    for (; Budget1 >= 100; CurrentNumberOfDays1++) {
-        TotalNumberOfDays1 = CurrentNumberOfDays1 * 1;
-        if (CurrentNumberOfDays1 % 5 == 0) {
+    int budget1 = 1000;
+    int currentNumberOfDays1 = 0;
+    int totalNumberOfDays1 = 0;
+    System.out.println(" На сумму " + budget1 + " руб. вам доступно:");
+    for (; budget1 >= 100; currentNumberOfDays1++) {
+        totalNumberOfDays1 = currentNumberOfDays1;
+        if (currentNumberOfDays1 % 5 == 0) {
             continue;
         }
-        Budget1 -= 100;
+        budget1 -= 100;
     }
-    System.out.println(" " + TotalNumberOfDays1 + " дней парковки.");
+    System.out.println(" " + totalNumberOfDays1 + " дней парковки.");
+    if (totalNumberOfDays == totalNumberOfDays1) {
+        System.out.println(" Результаты обеих программ совпадают.");
+    } else {
+        System.out.println(" Результаты программ не совпадают.");
+    }
+
     System.out.println("Задание №4");
-    int Month = 0;
-    int Total = 0;
+    int month = 0;
+    int total = 0;
     while (true) {
-        Month++;
-        Total += 15_000;
-        if (Month % 6 == 0) {
-            Total += Total * 0.07;
+        month++;
+        total += 15_000;
+        if (month % 6 == 0) {
+            total += total * 0.07;
         }
-        System.out.println(" Месяц: " + Month + " Сумма: " + Total);
-        if (Total >= 12_000_000) {
+        System.out.println(" Месяц: " + month + " Сумма: " + total);
+        if (total >= 12_000_000) {
             break;
         }
     }
